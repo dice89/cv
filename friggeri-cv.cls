@@ -6,7 +6,7 @@
   \PassOptionsToClass{\CurrentOption}{article}%
 }
 \ProcessOptions\relax
-\LoadClass{article}
+\LoadClass{article} 
 
 
 %%%%%%%%%%
@@ -21,18 +21,18 @@
 \definecolor{gray}{HTML}{4D4D4D}
 \definecolor{lightgray}{HTML}{999999}
 
-\definecolor{green}{HTML}{C2E15F}
-\definecolor{orange}{HTML}{FDA333}
-\definecolor{purple}{HTML}{D3A4F9}
-\definecolor{red}{HTML}{FB4485}
-\definecolor{blue}{HTML}{6CE0F1}
+\definecolor{green}{HTML}{4D4D4D}
+\definecolor{orange}{HTML}{4D4D4D}
+\definecolor{purple}{HTML}{4D4D4D}
+\definecolor{red}{HTML}{4D4D4D}
+\definecolor{blue}{HTML}{4D4D4D}
 
-\ifdefined\@cv@print
-  \colorlet{green}{gray}
-  \colorlet{orange}{gray}
-  \colorlet{purple}{gray}
-  \colorlet{red}{gray}
-  \colorlet{blue}{gray}
+\ifdefined\@print@cv
+  \colorlet{gray}{gray}
+  \colorlet{gray}{gray}
+  \colorlet{gray}{gray}
+  \colorlet{gray}{gray}
+  \colorlet{gray}{gray}
   \colorlet{fillheader}{white}
   \colorlet{header}{gray}
 \else
@@ -137,13 +137,24 @@
   \end{tabular*}
 }
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
+
 \newcommand{\entry}[4]{%
-  #1&\parbox[t]{11.8cm}{%
+  #1&\parbox[t]{11.3cm}{%
     \textbf{#2}%
     \hfill%
     {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
-    #4\vspace{\parsep}%
+    \emph{#4}\vspace{\parsep}%
   }\\}
+ 
+ \newcommand{\eduentry}[5]{%
+  #1&\parbox[t]{11.3cm}{%
+    \textbf{#2}%
+    \hfill%
+    {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
+    \emph{#4}\\%
+     \emph{#5}\vspace{.5\parsep}%
+  }\\} 
+  
 
 
 %%%%%%%%%%%%%%
@@ -158,7 +169,7 @@
   \renewcommand{\section}[1]{
     \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
   }
-  \begin{textblock}{3.6}(1.5, 4.33)
+  \begin{textblock}{4.3}(1, 4.3)
   \begin{flushright}
   \obeycr
 }{%
@@ -281,5 +292,5 @@
 % Other tweaks %
 %%%%%%%%%%%%%%%%
 
-\RequirePackage[left=6.1cm,top=2cm,right=1.5cm,bottom=2.5cm,nohead,nofoot]{geometry}
+\RequirePackage[left=6.1cm,top=2cm,right=1.5cm,bottom=2.0cm,nohead,nofoot]{geometry}
 \RequirePackage{hyperref}
