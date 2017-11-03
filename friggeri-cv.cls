@@ -28,7 +28,7 @@
 \definecolor{blue}{HTML}{4D4D4D}
 
 \ifdefined\@print@cv
-  \colorlet{gray}{gray}
+ \colorlet{gray}{gray}
   \colorlet{gray}{gray}
   \colorlet{gray}{gray}
   \colorlet{gray}{gray}
@@ -139,20 +139,31 @@
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 
 \newcommand{\entry}[4]{%
-  #1&\parbox[t]{11.3cm}{%
+  \parbox[t]{1.0cm}{  #1
+   } &\parbox[t]{11.0cm}{%
     \textbf{#2}%
     \hfill%
-    {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
-    \emph{#4}\vspace{\parsep}%
+    {\footnotesize\addfontfeature{Color=gray} #3}\\%
+    \emph{#4}\vspace{2\parsep}%
   }\\}
  
  \newcommand{\eduentry}[5]{%
-  #1&\parbox[t]{11.3cm}{%
+  #1&\parbox[t]{11.0cm}{%
     \textbf{#2}%
     \hfill%
-    {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
+    {\footnotesize\addfontfeature{Color=gray} #3}\\%
     \emph{#4}\\%
-     \emph{#5}\vspace{.5\parsep}%
+     \emph{#5}\vspace{2\parsep}%
+  }\\} 
+
+ \newcommand{\eduentrythesis}[6]{%
+  #1 &\parbox[t]{11.0cm}{%
+    \textbf{#2}%
+    \hfill%
+    {\footnotesize\addfontfeature{Color=gray} #3}\\%
+    \emph{#4}\\%
+    #5\\%
+     \emph{#6}\vspace{2\parsep}%
   }\\} 
   
 
@@ -266,13 +277,6 @@
   \par\vspace{0.3\baselineskip}
 }
 
-\DeclareNameFormat{author}{%
-  \small\addfontfeature{Color=lightgray}%
-  \ifblank{#3}{}{#3\space}#1%
-  \ifthenelse{\value{listcount}<\value{liststop}}
-    {\addcomma\space}
-    {}%
-}
 
 \newcommand{\printbibsection}[2]{
   \begin{refsection}
